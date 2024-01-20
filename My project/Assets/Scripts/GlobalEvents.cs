@@ -11,4 +11,8 @@ public static class GlobalEvents {
         public static FloatEvent UpdateHealthBarEvent;
         public static IntEvent UpdateCoinCountEvent;
     }
+
+    public static class Player {
+        public static VoidEvent PlayerDeathEvent;
+    }
 }

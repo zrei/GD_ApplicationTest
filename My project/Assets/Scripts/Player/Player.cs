@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(PlayerHealth))]
 [RequireComponent(typeof(PlayerCoins))]
@@ -12,6 +13,16 @@ public class Player : MonoBehaviour
     {
         m_Health = GetComponent<PlayerHealth>();
         m_Coins = GetComponent<PlayerCoins>();
+    }
+
+    private void Awake()
+    {
+        GlobalEvents.Player.PlayerDeathEvent += OnDeath;
+    }
+
+    private void OnDestroy()
+    {
+        GlobalEvents.Player.PlayerDeathEvent -= OnDeath;
     }
 
     private void Update()
@@ -56,5 +67,10 @@ public class Player : MonoBehaviour
     {
         m_Health.ResetHealth();
         m_Coins.ResetCoinCount();
+    }
+
+    private void OnDeath()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

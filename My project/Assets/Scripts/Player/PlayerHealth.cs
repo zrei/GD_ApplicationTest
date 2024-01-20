@@ -31,5 +31,7 @@ public class PlayerHealth : MonoBehaviour
     {
         m_Health -= damage;
         GlobalEvents.UI.UpdateHealthBarEvent?.Invoke(Mathf.Max(0, (float) m_Health / m_MaxHealth));
+        if (m_Health <= 0)
+            GlobalEvents.Player.PlayerDeathEvent?.Invoke();
     }
 }

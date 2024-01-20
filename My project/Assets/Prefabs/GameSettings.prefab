@@ -47,6 +47,6 @@ MonoBehaviour:
   m_Velocity: 3
   m_JumpVelocity: 10
   m_JumpDuration: 3
-  m_PlayerDamageCooldown: 5
-  m_PlayerHealth: 50
+  m_PlayerDamageCooldown: 20
+  m_PlayerHealth: 4
   m_Damage: 2
