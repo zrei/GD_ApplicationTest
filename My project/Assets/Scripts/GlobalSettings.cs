@@ -5,6 +5,12 @@ public class GlobalSettings : Singleton<GlobalSettings>
     [Header("Player Settings")]
     [SerializeField] private float m_Velocity = 1;
     public static float Velocity => Instance.m_Velocity;
+    [SerializeField] private float m_JumpVelocity = 1;
+    public static float JumpVelocity => Instance.m_JumpVelocity;
+    [SerializeField] private float m_JumpDuration = 0.8f;
+    public static float JumpDuration => Instance.m_JumpDuration;
+    [SerializeField] private float m_PlayerDamageCooldown = 2;
+    public static float PlayerDamageCooldown => Instance.m_PlayerDamageCooldown;
 
     [SerializeField] private int m_PlayerHealth = 50;
     public static int PlayerHealth => Instance.m_PlayerHealth;
