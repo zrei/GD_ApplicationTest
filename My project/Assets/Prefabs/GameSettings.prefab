@@ -45,8 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Velocity: 3
-  m_JumpVelocity: 10
-  m_JumpDuration: 3
-  m_PlayerDamageCooldown: 20
-  m_PlayerHealth: 4
+  m_JumpVelocity: 7
+  m_PlayerDamageCooldown: 5
+  m_FlashRedDuration: 0.2
+  m_PlayerHealth: 20
   m_Damage: 2

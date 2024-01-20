@@ -1,27 +1,29 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-class PlayerMovement2d : MonoBehaviour
+[RequireComponent(typeof(BoxCollider2D))]
+class PlayerMovement2d : MovementBase
 {
-    private Rigidbody2D m_Sr;
+    [Header("Grounding Assistance")]
     [SerializeField] private LayerMask groundLayer;
-    [SerializeField] private BoxCollider2D m_BoxCollider;
-    private float m_JumpDuration;
+
+    private Rigidbody2D m_rb;
+    private BoxCollider2D m_BoxCollider;
 
     private void Start()
     {
-        m_Sr = GetComponent<Rigidbody2D>();
+        m_rb = GetComponent<Rigidbody2D>();
         m_BoxCollider = GetComponent<BoxCollider2D>();
     }
 
-    private void FixedUpdate()
+    protected override void Move()
     {
         float direction = Input.GetAxisRaw("Horizontal");
 
-        m_Sr.velocity = new Vector2(direction * GlobalSettings.Velocity, m_Sr.velocity.y);
+        m_rb.velocity = new Vector2(direction * GlobalSettings.Velocity, m_rb.velocity.y);
         
         if (Input.GetKeyDown(KeyCode.Space) && IsGrounded()) {
-            m_Sr.velocity = new Vector2(m_Sr.velocity.x, GlobalSettings.JumpVelocity);
+            m_rb.velocity = new Vector2(m_rb.velocity.x, GlobalSettings.JumpVelocity);
         }
 
         if (direction > 0)

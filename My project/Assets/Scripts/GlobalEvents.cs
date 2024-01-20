@@ -14,5 +14,6 @@ public static class GlobalEvents {
 
     public static class Player {
         public static VoidEvent PlayerDeathEvent;
+        public static VoidEvent PlayerRepositionEvent;
     }
 }

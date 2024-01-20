@@ -252,7 +252,7 @@ GameObject:
   - component: {fileID: 6287314097466086293}
   - component: {fileID: 8040293052933703010}
   m_Layer: 5
-  m_Name: Lifebar
+  m_Name: UI_Lifebar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
