@@ -4,8 +4,8 @@ public abstract class MovementBase : MonoBehaviour
 {
     [Header("Aboveground Assistance")]
     [SerializeField] private float m_MaxYOffset;
-    protected Vector3 m_StartingPosition;
-    protected Quaternion m_StartingRotation;
+    private Vector3 m_StartingPosition;
+    private Quaternion m_StartingRotation;
 
     private void Update()
     {
